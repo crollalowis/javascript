@@ -5,7 +5,7 @@ module.exports = {
 
     // enforces return statements in callbacks of array's methods
     // https://eslint.org/docs/rules/array-callback-return
-    'array-callback-return': 'error',
+    'array-callback-return': ['error', { allowImplicit: true }],
 
     // treat var statements as if they were block scoped
     'block-scoped-var': 'error',
@@ -23,10 +23,14 @@ module.exports = {
     'consistent-return': 'error',
 
     // specify curly brace conventions for all control statements
-    curly: ['error', 'multi-line'],
+    curly: ['error', 'multi-line'], // multiline
 
     // require default case in switch statements
     'default-case': ['error', { commentPattern: '^no default$' }],
+
+    // https://eslint.org/docs/rules/default-param-last
+    // TODO: enable, semver-minor, when eslint v6.4 is required (which is a major)
+    'default-param-last': 'off',
 
     // encourages use of dot notation whenever possible
     'dot-notation': ['error', { allowKeywords: true }],
@@ -39,8 +43,17 @@ module.exports = {
     // https://eslint.org/docs/rules/eqeqeq
     eqeqeq: ['error', 'always', { null: 'ignore' }],
 
+    // Require grouped accessor pairs in object literals and classes
+    // https://eslint.org/docs/rules/grouped-accessor-pairs
+    // TODO: enable in next major, altho the guide forbids getters/setters anyways
+    'grouped-accessor-pairs': 'off',
+
     // make sure for-in loops have an if statement
     'guard-for-in': 'error',
+
+    // enforce a maximum number of classes per file
+    // https://eslint.org/docs/rules/max-classes-per-file
+    'max-classes-per-file': ['error', 1],
 
     // disallow the use of alert, confirm, and prompt
     'no-alert': 'warn',
@@ -51,6 +64,11 @@ module.exports = {
     // disallow lexical declarations in case/default clauses
     // https://eslint.org/docs/rules/no-case-declarations.html
     'no-case-declarations': 'error',
+
+    // Disallow returning value in constructor
+    // https://eslint.org/docs/rules/no-constructor-return
+    // TODO: enable, semver-major
+    'no-constructor-return': 'off',
 
     // disallow division operators explicitly at beginning of regular expression
     // https://eslint.org/docs/rules/no-div-regex
@@ -173,6 +191,7 @@ module.exports = {
       props: true,
       ignorePropertyModificationsFor: [
         'acc', // for reduce accumulators
+        'accumulator', // for reduce accumulators
         'e', // for e.returnvalue
         'ctx', // for Koa routing
         'req', // for Express requests
@@ -180,6 +199,7 @@ module.exports = {
         'res', // for Express responses
         'response', // for Express responses
         '$scope', // for Angular 1 scopes
+        'staticContext', // for ReactRouter context
       ]
     }],
 
@@ -242,7 +262,9 @@ module.exports = {
 
     // disallow self assignment
     // https://eslint.org/docs/rules/no-self-assign
-    'no-self-assign': 'error',
+    'no-self-assign': ['error', {
+      props: true,
+    }],
 
     // disallow comparisons where both sides are exactly the same
     'no-self-compare': 'error',
@@ -271,6 +293,10 @@ module.exports = {
     // disallow unnecessary .call() and .apply()
     'no-useless-call': 'off',
 
+    // Disallow unnecessary catch clauses
+    // https://eslint.org/docs/rules/no-useless-catch
+    'no-useless-catch': 'error',
+
     // disallow useless string concatenation
     // https://eslint.org/docs/rules/no-useless-concat
     'no-useless-concat': 'error',
@@ -297,12 +323,24 @@ module.exports = {
     // https://eslint.org/docs/rules/prefer-promise-reject-errors
     'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
 
+    // Suggest using named capture group in regular expression
+    // https://eslint.org/docs/rules/prefer-named-capture-group
+    'prefer-named-capture-group': 'off',
+
+    // https://eslint.org/docs/rules/prefer-regex-literals
+    // TODO; enable, semver-minor, once eslint v6.4 is required (which is a major)
+    'prefer-regex-literals': 'off',
+
     // require use of the second argument for parseInt()
     radix: 'error',
 
     // require `await` in `async function` (note: this is a horrible rule that should never be used)
     // https://eslint.org/docs/rules/require-await
     'require-await': 'off',
+
+    // Enforce the use of u flag on RegExp
+    // https://eslint.org/docs/rules/require-unicode-regexp
+    'require-unicode-regexp': 'off',
 
     // requires to declare all vars on top of their containing scope
     'vars-on-top': 'error',

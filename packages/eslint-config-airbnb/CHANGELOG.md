@@ -1,3 +1,78 @@
+18.1.0 / 2020-03-12
+==================
+ - [minor] Support eslint-plugin-react-hooks@2 (#2090)
+ - [minor] add new disabled rules, update eslint
+ - [fix] `whitespace`: only set erroring rules to "warn"
+ - [patch] Remove duplicate `componentDidCatch` (#2108)
+ - [patch] Add `static-variables` to `sort-comp` rule (#2109)
+ - [readme] clarify hooks section in readme (#2074)
+ - [deps] update `eslint`, `eslint-plugin-react`, `eslint-plugin-react-hooks`, `eslint-config-airbnb-base`, `eslint-plugin-import`, `object.entries`
+ - [dev deps] update `@babel/runtime`, `babel-preset-airbnb`, `safe-publish-latest`, `tape`
+ - [tests] re-enable eslint rule `prefer-destructuring` internally (#2110)
+ - [tests] fix eslint errors from c66cfc3 (#2112)
+
+18.0.1 / 2019-08-13
+==================
+ - [patch] `react/state-in-constructor`: fix incorrect configuration
+
+18.0.0 / 2019-08-10
+==================
+ - [breaking] add eslint v6, drop eslint v4
+ - [deps] [breaking] update `eslint-config-airbnb-base`, `eslint-plugin-react`, `eslint-find-rules`, `eslint-plugin-import`
+ - [breaking] Remove rules/strict from 'extends' (#1962)
+ - [breaking] set react version to "detect"
+ - [breaking] disable `label-has-for`; enable `control-has-associated-label`
+ - [breaking] enable `react/jsx-props-no-spreading`
+ - [breaking] enable `react/jsx-fragments`
+ - [minor] enable `react/static-property-placement`
+ - [minor] enable `react/state-in-constructor`
+ - [minor] enable `react/jsx-curly-newline`
+ - [react] Add missing/unsafe lifecycle methods to react/sort-comp rule (#2043)
+ - [react] add componentDidCatch to lifecycle for react/sort-comp (#2060)
+ - [react] add `react-hooks` plugin (#2022)
+ - [dev deps] update babel-related deps to latest
+ - [tests] only run tests in non-lint per-package travis job
+ - [tests] use `eclint` instead of `editorconfig-tools`
+ - [meta] add disabled config for new react and a11y rules
+
+
+17.1.1 / 2019-07-01
+==================
+ - [patch] Turn off `react/no-multi-comp` (#2006)
+ - [patch] extend `no-underscore-dangle` to allow for redux dev tools in the main config instead (#1996)
+ - [meta] add disabled `jsx-fragments` rule
+ - [deps] update `eslint-config-airbnb-base`, `object.entries`, `eslint-plugin-import`, `eslint-plugin-react`, `eslint-plugin-jsx-a11y`, `babel-preset-airbnb`, `tape` (#2005, etc)
+ - [docs] correct JavaScript capitalization (#2046)
+ - [docs] fix docs for whitespace config (#1914, #1871)
+ - [readme] Improve eslint config setup instructions for yarn (#2001)
+
+17.1.0 / 2018-08-13
+==================
+- [new] add eslint v5 support
+- [minor] enable `label-has-associated-control` rule
+- [patch] re-enabling `jsx-one-expression-per-line` allowing single children, ignore DOM components on `jsx-no-bind`
+- [deps] update `eslint`, `eslint-config-airbnb-base`, `eslint-plugin-react`, `eslint-plugin-import`, `safe-publish-latest`, `eslint-plugin-jsx-a11y`, `eslint-find-rules`
+- [docs] fix readme typo (#1855)
+
+17.0.0 / 2018-06-21
+==================
+- [breaking] update `eslint-config-airbnb-base` to v13
+- [breaking] enable `no-useless-path-segments` (#1743)
+- [breaking] update `eslint-plugin-react` to `v7.6`; update rule configs (#1737)
+- [breaking] bump react pragma to v16; update `class-methods-use-this`'s `exceptMethods` to include `componentDidCatch` (#1704)
+- [new] Adds config entry point with only whitespace rules enabled (#1749, #1751)
+- [patch] set `forbid-foreign-prop-types` to "warn"
+- [patch] Add new methods introduced in react@16.3 (#1831)
+- [patch] `label-has-for`: Remove redundant component (#1802)
+- [patch] Add 'to' as a specialLink to the 'anchor-is-valid' a11y rule (#1648)
+- [patch] disable `no-did-mount-set-state`, since it’s necessary for server-rendering.
+- [deps] update `eslint`, `eslint-plugin-react`, `eslint-plugin-import`,
+- [dev deps] update `babel-preset-airbnb`, `tape`, `eslint-find-rules`
+- [meta] add ES2015-2018 in npm package keywords (#1587)
+- [meta] Add licenses to sub packages (#1746)
+- [docs] add `npx` shortcut (#1694)
+- [docs] Use HTTPS for links to ESLint documentation (#1628)
+
 16.1.0 / 2017-10-16
 ==================
 - [deps] update `eslint-config-airbnb-base`, `eslint` to v4.9
